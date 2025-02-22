@@ -60,6 +60,8 @@ class UserRegistrationController extends Controller
 
         if($validateData['ssc_batch'] === null && isset($validateData['which_class'])) {
             $subTotalAmount = 250;
+        } else if(isset($validateData['study_year_count'])) {
+            $subTotalAmount = 1000;
         } else {
             if(1972 <= $validateData['ssc_batch'] && $validateData['ssc_batch'] <= 2020) {
                 $subTotalAmount = 1000;
