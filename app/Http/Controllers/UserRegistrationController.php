@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use App\Models\OpinionModel;
 use Illuminate\Http\Request;
@@ -105,7 +106,8 @@ class UserRegistrationController extends Controller
             return redirect()->route('payment.summary')->with('error', 'প্রতিদিন সর্বোচ্চ ৬টি ওটিপি অনুমোদিত। আবার চেষ্টা করুন! '. gmdate('H:i:s', $retryAfter).' এই সময়ের পরে।');
         }
         RateLimiter::hit($limiterKey, 24 * 60 * 60);
-        if(!session()->get('otp_sent')) {
+        $otpSentexpiryMinutes = Carbon::parse(session()->get('otp_sent'))->addMinutes(2);
+        if($otpSentexpiryMinutes->lessThan(Carbon::now()) && session()->has('otp_sent')) {
             $api_url = env('SMS_API_URL');
             $otp = random_int(100000, 999999);
             $expiryMinutes = 5;
@@ -119,8 +121,9 @@ class UserRegistrationController extends Controller
             ]);
     
             if($response->successful() && $response['error'] == 0) {
+                
                 session()->put([
-                    'otp_sent' => true
+                    'otp_sent' => Carbon::now()
                 ]);
                 return redirect()->route('otp.verification')->with('success', 'OTP কোড পাঠানো হয়েছে৷');
                 //return $response;
@@ -154,6 +157,7 @@ class UserRegistrationController extends Controller
 
         if($validateOtp['submitted_otp'] == $cachedOtp) {
             Cache::forget("otp_{$mobileNumber}");
+            session()->forget('otp_sent');
             session()->put([
                 'otp_verified' => true
             ]);

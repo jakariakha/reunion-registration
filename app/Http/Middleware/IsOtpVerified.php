@@ -18,6 +18,7 @@ class IsOtpVerified
         if(empty(session()->get('otp_verified')) && !empty(session()->get('otp_sent'))) {
             return $next($request);
         }
+        
         return redirect()->back();
     }
 }
