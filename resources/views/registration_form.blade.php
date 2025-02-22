@@ -147,7 +147,7 @@
                 </select>
             </div>
 
-            <div id="ssc-batch-less-22" class="mb-4 hidden">
+            <div id="sscBatchLess21" class="mb-4 hidden">
                 <label for="participation" class="block text-black mb-2">অংশগ্রহণের ধরন</label>
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center text-black">
@@ -250,7 +250,7 @@
 </body>
 
 <script>
-    const sscBatchLess22 = document.getElementById('ssc-batch-less-22');
+    const sscBatchLess21 = document.getElementById('sscBatchLess21');
     const sscBatchLess25 = document.getElementById('ssc-batch-less-25');
     const runningStudent = document.getElementById('runningStudent');
     const sscPassYesOption = document.getElementById('ssc-pass-yes');
@@ -297,7 +297,7 @@
             runningStudent.style.display = 'none';
             whichClassSection.style.display = 'none';
             studyStatusSection.style.display = 'none';
-            sscBatchLess22.style.display = 'none';
+            sscBatchLess21.style.display = 'none';
             sscBatchLess25.style.display = 'none';
             childSection.style.display = 'none';
             childInfoSection.style.display = 'none';
@@ -311,7 +311,7 @@
             studyStatusYes.required = true;
             sscBatchSection.style.display = 'none';
             studyStatusSection.style.display = 'block';
-            sscBatchLess22.style.display = 'none';
+            sscBatchLess21.style.display = 'none';
             sscBatchLess25.style.display = 'none';
             childSection.style.display = 'none';
             childInfoSection.style.display = 'none';
@@ -324,6 +324,7 @@
             whichClass.required = true;
             single3.required = true;
             studyYearCountYesOption.required = false;
+            sscBatchLess21.style.display = 'none';
             whichClassSection.style.display = 'block';
             runningStudent.style.display = 'block';
             childSection.style.display = 'none';
@@ -338,7 +339,9 @@
             whichClass.required = false;
             single3.required = false;
             studyYearCountYesOption.required = true;
+            sscBatchLess21.style.display = 'none';
             whichClassSection.style.display = 'none';
+            runningStudent.style.display = 'none';
             childSection.style.display = 'none';
             childInfoSection.style.display = 'none';
             studyYearCountSection.style.display = 'block';
@@ -351,7 +354,7 @@
             single3.required = true;
             couple3.required = true;
             whichClassSection.style.display = 'none';
-            runningStudent.style.display = 'block';
+            sscBatchLess21.style.display = 'block';
             notEligible.style.display = 'none';
             registrantSection.style.display = 'block';
             nextButton.disabled = false;
@@ -363,7 +366,7 @@
             single3.required = false;
             couple3.required = false;
             whichClassSection.style.display = 'none';
-            runningStudent.style.display = 'none';
+            sscBatchLess21.style.display = 'none';
             childInfoSection.style.display = 'none';
             childSection.style.display = 'none';
             notEligible.style.display = 'block';
@@ -397,20 +400,20 @@
         couple1.required = false;
         single2.required = false;
         couple2.required = false;
-    } else if (batchYear < 2022) {
+    } else if (batchYear < 2021) {
         single1.required = true;
         couple1.required = true;
-        sscBatchLess22.style.display = 'block';
+        sscBatchLess21.style.display = 'block';
         sscBatchLess25.style.display = 'none';
         sscBatchYearAlert.style.display = 'none';
-    } else if (batchYear >= 2022 && batchYear < 2025) {
+    } else if (batchYear >= 2021 && batchYear < 2025) {
         single2.required = true;
         couple2.required = true;
-        sscBatchLess22.style.display = 'none';
+        sscBatchLess21.style.display = 'none';
         sscBatchLess25.style.display = 'block';
         sscBatchYearAlert.style.display = 'none';
     } else {
-        sscBatchLess22.style.display = 'none';
+        sscBatchLess21.style.display = 'none';
         sscBatchLess25.style.display = 'none';
         sscBatchYearAlert.style.display = 'block';
     }
