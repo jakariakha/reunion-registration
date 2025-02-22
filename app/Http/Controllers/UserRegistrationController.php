@@ -100,7 +100,7 @@ class UserRegistrationController extends Controller
     public function sendOtp() {
         $mobileNumber = session()->get('validate_data')['mobile_number'];
         $limiterKey = 'otp:' . $mobileNumber ;
-        if(RateLimiter::tooManyAttempts($limiterKey, 6)) {
+        if(RateLimiter::tooManyAttempts($limiterKey, 15)) {
             $retryAfter = RateLimiter::availableIn($limiterKey);
             return redirect()->route('payment.summary')->with('error', 'প্রতিদিন সর্বোচ্চ ৬টি ওটিপি অনুমোদিত। আবার চেষ্টা করুন! '. gmdate('H:i:s', $retryAfter).' এই সময়ের পরে।');
         }
