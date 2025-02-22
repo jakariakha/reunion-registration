@@ -38,6 +38,10 @@ Route::get('/opinion', function () {
     return view('opinion');
 })->name('opinion');
 
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
 Route::post('/opinion', [UserRegistrationController::class, 'opinionSubmit'])->name('opinion.submit');
 
 Route::post('/calculate-payment-and-participants', [UserRegistrationController::class, 'paymentAndParticipants'])->name('payment.participants');

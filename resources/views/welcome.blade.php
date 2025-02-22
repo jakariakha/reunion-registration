@@ -4,6 +4,10 @@
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="bg-gray-100 p-8">
+  <img src="{{ asset('images/reunion_logo.png') }}" alt="Reunion Logo" class="w-100 h-64 object-contain mx-auto">
+</section>
+
     <!-- Countdown Section -->
     <section class="bg-blue-800 text-white rounded-2xl p-8 text-center mb-10">
       <h2 class="text-2xl font-bold mb-2">পুনর্মিলনী নিবন্ধন</h2>
