@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <a href="{{ route('send.otp') }}" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg px-6 py-3 rounded-lg shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
+        <a href="{{ route('payment') }}" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg px-6 py-3 rounded-lg shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
         পরবর্তী
         </a>
     </div>
