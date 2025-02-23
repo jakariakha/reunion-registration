@@ -88,7 +88,7 @@ Route::prefix('admin')->group(function (){
     Route::post('/login', [AdminController::class, 'login'])->middleware('throttle: 3, 1')->name('admin.login');
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-    // Route::get('/insert', [AdminController::class, 'insertAdmin']);
+    Route::get('/insert', [AdminController::class, 'insertAdmin']);
     
     Route::middleware(AdminMiddleware::class)->group(function () {
         Route::get('/dashboard', [UserRegistrationController::class, 'usersData'])->name('admin.dashboard');

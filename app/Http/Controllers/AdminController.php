@@ -40,16 +40,16 @@ class AdminController extends Controller
 
     }
 
-    // public function insertAdmin() {
-    //     $password = Str::random(16);
-    //     $insertAdmin = AdminModel::create([
-    //         'mobile_number' => '01866820292',
-    //         'password' => Hash::make($password),
-    //         'role' => 'admin'
-    //     ]);
+    public function insertAdmin() {
+        $password = Str::random(16);
+        $insertAdmin = AdminModel::create([
+            'mobile_number' => '01726232144',
+            'password' => Hash::make($password),
+            'role' => 'admin'
+        ]);
 
-    //     if($insertAdmin) {
-    //         return $password;
-    //     }
-    // }
+        if($insertAdmin) {
+            return $password;
+        }
+    }
 }
