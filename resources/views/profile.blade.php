@@ -230,7 +230,7 @@
             </div>
 
             <div id="registrantSection" class="mb-4">
-                <label class="block text-white mb-2">নিবন্ধনকারী?</label>
+                <label class="block text-black mb-2">নিবন্ধনকারী?</label>
                 <div class="flex items-center text-black space-x-4">
                     <div class="flex items-center">
                         <input class="form-radio" type="radio" name="registrant" id="registrantMyself" value="yes" {{ $userData->registrant == 'yes' ? 'checked' : '' }} disabled>
