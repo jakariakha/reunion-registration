@@ -35,15 +35,7 @@ return [
         ],
     ],
 
-    'app_url' => env('APP_URL'),
-
-    'sms_api_key' => env('SMS_API_KEY'),
-    'sms_api_url' => env('SMS_API_URL'),
-
-    'bkash_app_key' => env('BKASH_APP_KEY'),
-    'bkash_secret_key' => env('BKASH_SECRET_KEY'),
-    'bkash_username' => env('BKASH_USERNAME'),
-    'bkash_password' => env('BKASH_PASSWORD'),
+  
 
     'turnstile' => [
         'site_key' => env('TURNSTILE_SITE_KEY'),
