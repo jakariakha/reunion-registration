@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Payment Summary')
 @section('content')
 
  <!-- Payment Summary Section -->

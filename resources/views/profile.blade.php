@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'পুনর্মিলনী নিবন্ধন')
+@section('title', 'Profile')
 
 @section('content')
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Reunion Registration')
+@section('title', 'Reunion Registration 2025')
 @section('content')
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">

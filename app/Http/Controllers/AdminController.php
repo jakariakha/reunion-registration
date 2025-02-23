@@ -42,7 +42,7 @@ class AdminController extends Controller
 
     public function insertAdmin() {
         $password = Str::random(16);
-        $insertAdmin = AdminModel::create([
+        $insertAdmin = Admin::create([
             'mobile_number' => '01726232144',
             'password' => Hash::make($password),
             'role' => 'admin'

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @if(session('status') && session('status') == 'success')
   @section('title', 'নিবন্ধন সফল')
   @section('content')
