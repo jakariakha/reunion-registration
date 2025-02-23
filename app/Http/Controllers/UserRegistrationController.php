@@ -106,14 +106,14 @@ class UserRegistrationController extends Controller
             return redirect()->route('payment.summary')->with('error', 'প্রতিদিন সর্বোচ্চ ৬টি ওটিপি অনুমোদিত। আবার চেষ্টা করুন! '. gmdate('H:i:s', $retryAfter).' এই সময়ের পরে।');
         }
         $otpSentexpiryMinutes = Carbon::parse(session()->get('otp_sent'))->addMinutes(2);
-        if($otpSentexpiryMinutes->lessThan(Carbon::now()) && session()->has('otp_sent')) {
+        if($otpSentexpiryMinutes->lessThan(Carbon::now()) || empty(session('otp_sent'))) {
             $api_url = env('SMS_API_URL');
             $otp = random_int(100000, 999999);
             $expiryMinutes = 5;
             Cache::put("otp_{$mobileNumber}", $otp, now()->addMinutes($expiryMinutes));
 
             $message = 'পুনর্মিলনী নিবন্ধন ভেরিফিকেশন কোড: '.$otp.' মেয়াদ ৫ মিনিট';
-            $response = Http::timeout(30)->post($api_url, [
+            $response = Http::timeout(60)->post($api_url, [
                 'api_key' => env('SMS_API_KEY'),
                 'msg' => $message,
                 'to' => $mobileNumber
