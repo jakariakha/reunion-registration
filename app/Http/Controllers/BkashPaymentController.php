@@ -53,7 +53,7 @@ class BkashPaymentController extends Controller
         ])->post($this->base_url.'/create', [
             'mode' => '0011',
             'payerReference' => '01XXXXXXXXX',
-            'callbackURL' => cofig('app.app_url').'/transaction-status',
+            'callbackURL' => config('app.app_url').'/transaction-status',
             'merchantAssociationInfo' => 'MI05MID54RF09123456One',
             'amount' => $totalAmount,
             'currency' => 'BDT',
