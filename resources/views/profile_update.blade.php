@@ -69,9 +69,9 @@
                 </div>
             </div>
 
-            <div id="sscBatchLess25" class="mb-4 {{ (21 <= $userData->ssc_batch && $userData->ssc_batch<= 24) ? '' : 'hidden' }}">
+            <div id="sscBatchLess25" class="mb-4 {{ (21 <= $userData->ssc_batch && $userData->ssc_batch <= 24) ? '' : 'hidden' }}">
                 <label for="participation" class="block text-white mb-2">অংশগ্রহণের ধরন</label>
-                <div class="">
+                <div class="flex items-center space-x-4">
                     <div class="flex items-center text-black">
                         <input class="form-radio" type="radio" name="participation_type" id="single2" value="single">
                         <label for="single" class="ml-2">একা(৭৫০ টাকা)</label>
@@ -135,7 +135,8 @@
     </div>
   </div>
   <script>
-     $('#sscBatchLess22').change(function() {
+
+     $('#sscBatchLess21').change(function() {
         if($('#single1').is(':checked')) {
             $('#childSection').hide();
             $('#takeComeChildrenYes').removeAttr('required', false);
