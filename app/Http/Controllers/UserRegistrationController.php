@@ -101,11 +101,10 @@ class UserRegistrationController extends Controller
     public function sendOtp() {
         $mobileNumber = session()->get('validate_data')['mobile_number'];
         $limiterKey = 'otp:' . $mobileNumber ;
-        if(RateLimiter::tooManyAttempts($limiterKey, 15)) {
+        if(RateLimiter::tooManyAttempts($limiterKey, 6)) {
             $retryAfter = RateLimiter::availableIn($limiterKey);
             return redirect()->route('payment.summary')->with('error', 'প্রতিদিন সর্বোচ্চ ৬টি ওটিপি অনুমোদিত। আবার চেষ্টা করুন! '. gmdate('H:i:s', $retryAfter).' এই সময়ের পরে।');
         }
-        RateLimiter::hit($limiterKey, 24 * 60 * 60);
         $otpSentexpiryMinutes = Carbon::parse(session()->get('otp_sent'))->addMinutes(2);
         if($otpSentexpiryMinutes->lessThan(Carbon::now()) && session()->has('otp_sent')) {
             $api_url = env('SMS_API_URL');
@@ -121,7 +120,7 @@ class UserRegistrationController extends Controller
             ]);
     
             if($response->successful() && $response['error'] == 0) {
-                
+                RateLimiter::hit($limiterKey, 24 * 60 * 60);
                 session()->put([
                     'otp_sent' => Carbon::now()
                 ]);
