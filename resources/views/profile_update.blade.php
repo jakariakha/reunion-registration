@@ -56,15 +56,15 @@
             </div>
             
             <div id="sscBatchLess21" class="mb-4 {{ (2021 > $userData->ssc_batch && isset($userData->ssc_batch)) ? '' : 'hidden' }}">
-                <label for="participation" class="block text-black mb-2">অংশগ্রহণের ধরন</label>
-                <div class="flex items-center space-x-4">
+            <label for="participation" class="block text-black mb-2">অংশগ্রহণের ধরন</label>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0">
                     <div class="flex items-center text-black">
-                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="participation_type" id="single1" value="single" {{ $userData->participation_type == 'single' ? 'checked' : '' }}>
-                        <label for="single" class="ml-2">একা(১০০০ টাকা)</label>
+                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="participation_type" id="single3" value="single" {{ $userData->participation_type == 'single' ? 'checked' : '' }}>
+                        <label for="single3" class="ml-2">একা</label>
                     </div>
                     <div class="flex items-center text-black">
-                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="participation_type" id="couple1" value="couple" {{ $userData->participation_type == 'couple' ? 'checked' : '' }}>
-                        <label for="couple" class="ml-2">স্বামী-স্ত্রী(১৩০০ টাকা)</label>
+                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="participation_type" id="couple3" value="couple" {{ $userData->participation_type == 'couple' ? 'checked' : '' }}>
+                        <label for="couple3" class="ml-2">স্বামী-স্ত্রী</label>
                     </div>
                 </div>
             </div>
