@@ -107,14 +107,14 @@ class UserRegistrationController extends Controller
         }
         $otpSentexpiryMinutes = Carbon::parse(session()->get('otp_sent'))->addMinutes(2);
         if($otpSentexpiryMinutes->lessThan(Carbon::now()) || empty(session('otp_sent'))) {
-            $api_url = env('SMS_API_URL');
+            $api_url = config('app.sms_api_url');
             $otp = random_int(100000, 999999);
             $expiryMinutes = 5;
             Cache::put("otp_{$mobileNumber}", $otp, now()->addMinutes($expiryMinutes));
 
             $message = 'পুনর্মিলনী নিবন্ধন ভেরিফিকেশন কোড: '.$otp.' মেয়াদ ৫ মিনিট';
             $response = Http::timeout(60)->post($api_url, [
-                'api_key' => env('SMS_API_KEY'),
+                'api_key' => config('app.sms_api_key'),
                 'msg' => $message,
                 'to' => $mobileNumber
             ]);
@@ -210,11 +210,11 @@ class UserRegistrationController extends Controller
     }
 
     public function sendPassword() {
-        $api_url = env('SMS_API_URL');
+        $api_url = config('app.sms_api_url');
         $password= session()->get('password');
         $message = 'পুনর্মিলনী নিবন্ধন অ্যাকাউন্টের পাসওয়ার্ড: '.$password;
         $response = Http::timeout(30)->post($api_url, [
-            'api_key' => env('SMS_API_KEY'),
+            'api_key' => config('app.sms_api_key'),
             'msg' => $message,
             'to' => session()->get('validate_data')['mobile_number']
         ]);

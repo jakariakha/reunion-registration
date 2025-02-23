@@ -30,11 +30,11 @@ class BkashPaymentController extends Controller
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
-            'username' => env('BKASH_USERNAME'),
-            'password' => env('BKASH_PASSWORD'),
+            'username' => config('app.bkash_username'),
+            'password' => config('app.bkash_password'),
         ])->post($this->base_url.'/token/grant', [
-            'app_key' => env('BKASH_APP_KEY'),
-            'app_secret' => env('BKASH_SECRET_KEY')
+            'app_key' => config('app.bkash_app_key'),
+            'app_secret' => config('app.bkash_secret_key')
         ]);
 
         if($response->successful()) {
@@ -49,11 +49,11 @@ class BkashPaymentController extends Controller
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
             'Authorization' => $idToken,
-            'X-App-Key' => env('BKASH_APP_KEY')
+            'X-App-Key' => config('app.bkash_app_key')
         ])->post($this->base_url.'/create', [
             'mode' => '0011',
             'payerReference' => '01XXXXXXXXX',
-            'callbackURL' => env('APP_URL').'/transaction-status',
+            'callbackURL' => cofig('app.app_url').'/transaction-status',
             'merchantAssociationInfo' => 'MI05MID54RF09123456One',
             'amount' => $totalAmount,
             'currency' => 'BDT',
@@ -71,7 +71,7 @@ class BkashPaymentController extends Controller
         $response = Http::withHeaders([
             'Accept' => 'application/json',
             'Authorization' => session('id_token'),
-            'X-App-Key' => env('BKASH_APP_KEY')
+            'X-App-Key' => config('app.bkash_app_key')
         ])->post($this->base_url.'/execute', [
             'paymentID' => $paymentID
         ]);
