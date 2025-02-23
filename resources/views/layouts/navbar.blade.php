@@ -1,17 +1,18 @@
 <nav class="bg-white text-gray-900 shadow-lg fixed top-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-<!-- Logo -->
-<div class="flex items-center">
-  <div class="w-32 md:w-40 h-auto"> <!-- Adjust width values as needed -->
-    <img 
-      src="{{ asset('images/reunion_logo.png') }}" 
-      alt="Logo" 
-      class="w-full h-full object-contain"
-    >
+  <!-- Logo -->
+  <div class="flex items-center">
+    <div class="w-32 md:w-40 h-auto"> <!-- Adjust width values as needed -->
+      <a href="{{ route('home') }}">
+        <img 
+          src="{{ asset('images/reunion_logo.png') }}" 
+          alt="Logo" 
+          class="w-full h-full object-contain"
+        >
+      </a>
+    </div>
   </div>
-</div>
-
-
+  
     <!-- Menu for large screens -->
     <div class="hidden lg:flex space-x-12 items-center text-lg font-medium">
       <a href="/" class="text-gray-900 hover:text-gray-500 transition-all duration-300">হোম</a>
@@ -73,9 +74,12 @@
       <a href="{{ route('contact') }}" class="block text-gray-900 hover:text-gray-500 transition-all duration-200 px-6 py-3">যোগাযোগ</a>
       <a href="{{ route('login') }}" class="text-gray-900 hover:text-gray-500 transition-all duration-300 px-6 py-3">লগইন</a>
       <!-- Premium Button -->
-      <a href="{{ route('registration') }}" class="block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg px-12 py-4 rounded-full shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
-        নিবন্ধন করুন
-      </a>
+       <div class="flex justify-center items-center">
+        <a href="{{ route('registration') }}" class="block text-center bg-green-500 text-white text-lg px-4 py-4 w-64 rounded-full shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
+          নিবন্ধন করুন
+        </a>
+       </div>
+      
     @endif
 
   </div>

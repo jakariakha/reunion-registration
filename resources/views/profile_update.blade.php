@@ -55,7 +55,7 @@
                 </select>
             </div>
 
-            <div id="sscBatchLess22" class="mb-4 {{ (22 > $userData->ssc_batch && isset($userData->ssc_batch)) ? '' : 'hidden' }}">
+            <div id="sscBatchLess21" class="mb-4 {{ (21 > $userData->ssc_batch && isset($userData->ssc_batch)) ? '' : 'hidden' }}">
                 <label for="participation" class="block text-black mb-2">অংশগ্রহণের ধরন</label>
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center text-black">
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div id="sscBatchLess25" class="mb-4 {{ (22 <= $userData->ssc_batch && $userData->ssc_batch<= 24) ? '' : 'hidden' }}">
+            <div id="sscBatchLess25" class="mb-4 {{ (21 <= $userData->ssc_batch && $userData->ssc_batch<= 24) ? '' : 'hidden' }}">
                 <label for="participation" class="block text-white mb-2">অংশগ্রহণের ধরন</label>
                 <div class="">
                     <div class="flex items-center text-black">

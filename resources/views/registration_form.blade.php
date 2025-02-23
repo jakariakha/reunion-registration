@@ -239,7 +239,7 @@
             <div class="cf-turnstile" data-sitekey="{{ config('services.turnstile.site_key') }}"></div>
             
             <div class="flex justify-center items-center">
-                <button id="nextButton" type="submit" class="bg-gradient-to-r from-blue-600 to-purple-600 text-black text-lg px-12 py-4 rounded-full shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
+                <button id="nextButton" type="submit" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg px-12 py-4 rounded-full shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
                     পরবর্তী
                 </button>
             </div>
