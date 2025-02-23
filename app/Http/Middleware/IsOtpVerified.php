@@ -15,7 +15,7 @@ class IsOtpVerified
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(empty(session()->get('otp_verified')) && !empty(session()->get('otp_sent'))) {
+        if(empty(session()->get('otp_verified')) && session()->has('otp_sent') ) {
             return $next($request);
         }
         
