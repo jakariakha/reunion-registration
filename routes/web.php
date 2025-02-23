@@ -14,7 +14,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/registraion', function () {
+Route::get('/registration', function () {
     return view('registration_form');
 })->name('registration');
 
