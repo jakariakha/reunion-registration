@@ -107,7 +107,7 @@
 
         <!-- Start Registration Button -->
         <div class="flex justify-center mb-8">
-            <a href="{{ route('registration') }}" class="bg-green-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-green-700 transition-all text-sm md:text-base shadow-md hover:shadow-lg">
+            <a href="{{ route('registration') }}" class="bg-green-500 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-green-700 transition-all text-sm md:text-base shadow-md hover:shadow-lg">
                 নিবন্ধন শুরু করুন →
             </a>
         </div>

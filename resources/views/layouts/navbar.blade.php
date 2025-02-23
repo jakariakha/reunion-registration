@@ -36,12 +36,10 @@
         <a href="{{ route('opinion') }}" class="block text-gray-900 hover:text-gray-500 transition-all duration-200 px-6 py-3">মতামত</a>
         <a href="{{ route('contact') }}" class="block text-gray-900 hover:text-gray-500 transition-all duration-200 px-6 py-3">যোগাযোগ</a>
         <a href="{{ route('login') }}" class="text-gray-900 hover:text-gray-500 transition-all duration-300">লগইন</a>
-        <!-- Start Registration Button -->
-        <div class="flex justify-center mb-8">
-            <a href="{{ route('registration') }}" class="bg-green-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-green-700 transition-all text-sm md:text-base shadow-md hover:shadow-lg">
-                নিবন্ধন শুরু করুন
-            </a>
-        </div>
+        <!-- Premium Button -->
+        <a href="{{ route('registration') }}" class="inline-block bg-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-green-600 transition-all transform hover:scale-105">
+          নিবন্ধন করুন
+        </a>
       @endif
     </div>
 
@@ -77,7 +75,7 @@
       <a href="{{ route('login') }}" class="text-gray-900 hover:text-gray-500 transition-all duration-300 px-6 py-3">লগইন</a>
       <!-- Premium Button -->
        <div class="flex justify-center items-center">
-        <a href="{{ route('registration') }}" class="block w-64 bg-green-600 text-white text-center px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-green-700 transition-all text-sm md:text-base shadow-md hover:shadow-lg">
+        <a href="{{ route('registration') }}" class="block text-center bg-green-500 text-white text-lg px-4 py-4 w-64 rounded-full shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
           নিবন্ধন করুন
         </a>
        </div>
