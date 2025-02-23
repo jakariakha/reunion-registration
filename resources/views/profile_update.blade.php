@@ -59,11 +59,11 @@
                 <label for="participation" class="block text-black mb-2">অংশগ্রহণের ধরন</label>
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center text-black">
-                        <input class="form-radio" type="radio" name="participation_type" id="single1" value="single" {{ $userData->participation_type == 'single' ? 'checked' : '' }}>
+                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="participation_type" id="single1" value="single" {{ $userData->participation_type == 'single' ? 'checked' : '' }}>
                         <label for="single" class="ml-2">একা(১০০০ টাকা)</label>
                     </div>
                     <div class="flex items-center text-black">
-                        <input class="form-radio" type="radio" name="participation_type" id="couple1" value="couple" {{ $userData->participation_type == 'couple' ? 'checked' : '' }}>
+                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="participation_type" id="couple1" value="couple" {{ $userData->participation_type == 'couple' ? 'checked' : '' }}>
                         <label for="couple" class="ml-2">স্বামী-স্ত্রী(১৩০০ টাকা)</label>
                     </div>
                 </div>
@@ -73,11 +73,11 @@
                 <label for="participation" class="block text-white mb-2">অংশগ্রহণের ধরন</label>
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center text-black">
-                        <input class="form-radio" type="radio" name="participation_type" id="single2" value="single" {{ $userData->participation_type == 'single' ? 'checked' : '' }}>
+                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="participation_type" id="single2" value="single" {{ $userData->participation_type == 'single' ? 'checked' : '' }}>
                         <label for="single" class="ml-2">একা(৭৫০ টাকা)</label>
                     </div>
                     <div class="flex items-center text-black">
-                        <input class="form-radio" type="radio" name="participation_type" id="couple2" value="couple" {{ $userData->participation_type == 'couple' ? 'checked' : '' }}>
+                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="participation_type" id="couple2" value="couple" {{ $userData->participation_type == 'couple' ? 'checked' : '' }}>
                         <label for="couple" class="ml-2">স্বামী-স্ত্রী(১০৫০ টাকা)</label>
                     </div>
                 </div>
@@ -101,11 +101,11 @@
                 <label class="block text-black mb-2">আপনি কি সন্তান নিয়ে আসতে চান?</label>
                 <div class="flex items-center text-black space-x-4">
                     <div class="flex items-center">
-                        <input class="form-radio" type="radio" name="take_come_children" id="takeComeChildrenYes" value="yes" {{ $userData->take_come_children == 'yes' ? 'checked' : '' }}>
+                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="take_come_children" id="takeComeChildrenYes" value="yes" {{ $userData->take_come_children == 'yes' ? 'checked' : '' }}>
                         <label for="take_come_children_yes" class="ml-2">হ্যাঁ</label>
                     </div>
                     <div class="flex items-center">
-                        <input class="form-radio" type="radio" name="take_come_children" id="takeComeChildrenNo" value="no" {{ $userData->take_come_children == 'no' ? 'checked' : '' }}>
+                        <input class="form-radio text-blue-500 focus:ring-blue-400" type="radio" name="take_come_children" id="takeComeChildrenNo" value="no" {{ $userData->take_come_children == 'no' ? 'checked' : '' }}>
                         <label for="take_come_children_no" class="ml-2">না</label>
                     </div>
                 </div>
