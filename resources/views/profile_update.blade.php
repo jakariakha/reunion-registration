@@ -54,22 +54,7 @@
                     <option value="XXXXXL" {{ $userData->t_shirt_size == 'XXXXXL' ? 'selected' : ''}}>XXXXXL</option>
                 </select>
             </div>
-
-        <div id="sscBatchLess21" class="mb-4">
-            <label for="participation" class="block text-black mb-2">অংশগ্রহণের ধরন</label>
-            <div class="flex items-center space-x-4">
-                <div class="flex items-center text-black">
-                    <input class="form-radio" type="radio" name="participation_type" id="single1" value="single" {{ $userData->participation_type == 'single' ? 'checked' : '' }}>
-                    <label for="single1" class="ml-2">একা(১০০০ টাকা)</label>
-                </div>
-                <div class="flex items-center text-black">
-                    <input class="form-radio" type="radio" name="participation_type" id="couple1" value="couple" checked>
-                    <label for="couple1" class="ml-2">স্বামী-স্ত্রী(১৩০০ টাকা)</label>
-                </div>
-            </div>
-        </div>
-
-
+            
             <div id="sscBatchLess21" class="mb-4 {{ (2021 > $userData->ssc_batch && isset($userData->ssc_batch)) ? '' : 'hidden' }}">
                 <label for="participation" class="block text-black mb-2">অংশগ্রহণের ধরন</label>
                 <div class="flex items-center space-x-4">
