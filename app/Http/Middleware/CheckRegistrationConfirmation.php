@@ -16,7 +16,7 @@ class CheckRegistrationConfirmation
 
     public function handle(Request $request, Closure $next): Response
     {
-        return session()->get('status');
+        return $request->session()->get('status');
         if($request->session()->get('status') === 'success' || $request->session()->get('status') === 'failed') {
             return $next($request);
         }
