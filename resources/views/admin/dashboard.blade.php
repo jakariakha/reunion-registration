@@ -128,7 +128,7 @@
       });
 
       $('#tShirtGiven').click(function() {
-        const Value = 'no';
+        let Value = 'no';
         if($(this).prop('checked')) {
           Value = 'yes';
         }
@@ -137,7 +137,7 @@
       });
 
       $('#foodGiven').click(function() {
-        const Value = 'no';
+        let Value = 'no';
         if($(this).prop('checked')) {
           Value = 'yes';
         }
