@@ -51,48 +51,4 @@
     </div>
   </div>
 
-  <script>
-    $(document).ready(function() {
-      $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-      });
-      
-      $('.updateTShirtGivenStatus').change(function() {
-        var userId = $(this).data('id');
-        var value = $(this).prop('checked') ? 'yes' : 'no';
-        const type = 't_shirt_given';
-        dataSave(userId, type, value, this);
-      });
-
-      $('.updateFoodGivenStatus').change(function() {
-        var userId = $(this).data('id');
-        var value = $(this).prop('checked') ? 'yes' : 'no';
-        const type = 'food_given';
-        dataSave(userId, type, value, this);
-      });
-
-      function dataSave(userId, type, value, element){
-        $.ajax({
-          url: "{{route('user.update.given')}}",
-          type: 'POST',
-          data: {
-            'user_id' : userId,
-            'type' : type,
-            'value' : value
-          },
-          success: function(response) {
-            if(response.value === 'yes') {
-              $(this).checked;
-            } else if(response.value === 'no') {
-              $(this).checked = false;
-            }
-          }
-        });
-      }
-    });
-
-  </script>
-
 </body>
