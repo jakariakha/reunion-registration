@@ -21,4 +21,4 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
-/views/test.blade.php
+/resources/views/test.blade.php
