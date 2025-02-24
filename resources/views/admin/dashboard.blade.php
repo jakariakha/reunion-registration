@@ -96,7 +96,7 @@
     </div>
   </div>
 
-  <!-- JavaScript for Search Functionality -->
+  <!-- JavaScript for Search Functionality and Update -->
   <script>
     $(document).ready(function() {
       $.ajaxSetup({
