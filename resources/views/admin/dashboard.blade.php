@@ -56,10 +56,10 @@
             @foreach($usersData as $user) 
               <tr>
                 <th class="px-6 py-4">
-                  <input type="checkbox" id="tShirtGiven" value="yes" class="w-4 h-4" {{ $user->t_shirt_given == 'yes' ? 'checked' : '' }}>
+                  <input type="checkbox" class="updateTShirtGivenStatus w-4 h-4" data-id="{{ $user->id }}" {{ $user->t_shirt_given == 'yes' ? 'checked' : '' }}>
                 </th>
                 <th class="px-6 py-4">
-                  <input type="checkbox" id="foodGiven" value="yes" class="w-4 h-4" {{ $user->food_given == 'yes' ? 'checked' : '' }}>
+                  <input type="checkbox" class="updateFoodGivenStatus w-4 h-4" data-id="{{ $user->id }}" {{ $user->food_given == 'yes' ? 'checked' : '' }}>
                 </th>
                 <td class="px-6 py-4 whitespace-nowrap">{{ $user->name ?? 'N/A' }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ $user->father_name ?? 'N/A' }}</td>
@@ -127,6 +127,20 @@
 
       });
 
+      $('.updateTShirtGivenStatus').change(function() {
+        var userid = $(this).data('id');
+        var value = $(this).prop('checked') ? 'yes' : 'no';
+        const type = 't_shirt_given';
+        dataSave(userId, type, value, this);
+      });
+
+      $('.updateFoodGivenStatus').change(function() {
+        var userid = $(this).data('id');
+        var value = $(this).prop('checked') ? 'yes' : 'no';
+        const type = 'food_given';
+        dataSave(userId, type, value, this);
+      });
+
       $('#tShirtGiven').click(function() {
         let Value = 'no';
         if($(this).prop('checked')) {
@@ -145,16 +159,16 @@
         dataSave(Type, Value, this);
       });
 
-      function dataSave(Type, Value, element){
-        console.log(Type+Value);
+      function dataSave(userId, type, value, element);{
+        console.log(userId+type+value);
         return;
         $.ajax({
           url: "{{route('user.update.given')}}",
           type: 'POST',
           data: {
-            'user_id' : {{ $user->id }},
-            'type' : Type,
-            'value' : Value ? 'yes' : 'no'
+            'user_id' : ,
+            'type' : type,
+            'value' : value
           },
           success: function(response) {
             console.log(response);
