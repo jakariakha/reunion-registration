@@ -91,8 +91,6 @@ class BkashPaymentController extends Controller
                     app(UserRegistrationController::class)->userProfileUpdate(session()->get('user_data'));
                 }
                 app(UserRegistrationController::class)->insertUserData();
-                // $UserRegistrationController = new UserRegistrationController;
-                // $UserRegistrationController->insertUserData();
                 return redirect()->route('registration.confirmation')->with('status', 'success');
             } else {
                 return redirect()->route('home');

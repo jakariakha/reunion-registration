@@ -386,9 +386,7 @@ class UserRegistrationController extends Controller
             'ssc_batch' => 'nullable|numeric|string|max:2025',
             'user_opinion' => 'required|string'
         ]);
-
-        // return $validateData;
-
+        
         $opinionData = OpinionModel::create([
             'name' => $validateData['name'],
             'ssc_batch' => $validateData['ssc_batch'] ?? null,
