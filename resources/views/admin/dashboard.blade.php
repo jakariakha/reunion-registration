@@ -159,7 +159,7 @@
         dataSave(Type, Value, this);
       });
 
-      function dataSave(userId, type, value, element);{
+      function dataSave(userId, type, value, element){
         console.log(userId+type+value);
         return;
         $.ajax({
