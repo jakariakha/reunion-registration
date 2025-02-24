@@ -5,15 +5,40 @@
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8">
         <!-- Main Image Section -->
-        <section class="mb-8 md:mb-12">
-            <img 
-                src="{{ asset('images/school_img.jpg') }}" 
-                alt="Reunion Logo" 
-                class="w-full h-auto object-contain mx-auto shadow-lg rounded-2xl"
-                loading="lazy"
-                style="max-height: min(70vh, 580px);"
-            >
+        <section class="relative mb-8 md:mb-12">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                <div class="relative w-full h-full">
+                    <!-- Image -->
+                    <img 
+                    src="{{ asset('images/school_img.jpg') }}" 
+                    alt="Reunion Logo" 
+                    class="w-full h-full object-cover mx-auto"
+                    loading="lazy"
+                    style="max-height: min(70vh, 580px);">
+
+                    <!-- Black Overlay -->
+                    <div class="absolute inset-0 bg-black/40"></div>
+
+                    <!-- Text Content -->
+                    <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 py-8 space-y-3">
+                        <p class="text-2xl md:text-4xl font-extrabold tracking-wide drop-shadow-lg">ফেরার হোক স্মৃতির টানে</p>
+                        <p class="text-lg md:text-2xl font-semibold tracking-tight drop-shadow-md">
+                            আহমদ আলী মেমোরিয়াল উচ্চ বিদ্যালয় পূর্ণমিলনী ২০২৫
+                        </p>
+                        <p class="text-base md:text-lg font-medium bg-white/20 px-4 py-1 rounded-xl backdrop-blur-sm">
+                            অনুষ্ঠানের তারিখ: ঈদুল আজহার তৃতীয় দিন
+                        </p>
+                        <p class="text-base md:text-lg font-medium bg-white/20 px-4 py-1 rounded-xl backdrop-blur-sm">
+                            গাংগাইল, মধুপুর, টাঙ্গাইল
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
+
+
+
+        
 
         <!-- Countdown Timer Section -->
         <section class="bg-blue-800 text-white rounded-2xl p-6 md:p-8 text-center mb-8 md:mb-10">
