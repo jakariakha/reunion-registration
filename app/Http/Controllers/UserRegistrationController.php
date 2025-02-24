@@ -359,7 +359,6 @@ class UserRegistrationController extends Controller
 
         $type = $request->input('type');
         $value = $request->input('value');
-        return $request;
         $user = UserRegistrationModel::find($userId);
         $updateData = UserRegistrationModel::where('id', $userId)->update([$type => $value]);
         if($value === 'yes' && $updateData) {
