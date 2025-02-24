@@ -126,14 +126,14 @@
 
       });
 
-      $('#tableBody').on('change', '.updateTShirtGivenStatus').change(function() {
+      $('#tableBody').on('change', '.updateTShirtGivenStatus', function() {
         var userId = $(this).data('id');
         var value = $(this).prop('checked') ? 'yes' : 'no';
         const type = 't_shirt_given';
         dataSave(userId, type, value, this);
       });
 
-       $('#tableBody').on('change', '.updateFoodGivenStatus').change(function() {
+       $('#tableBody').on('change', '.updateFoodGivenStatus', function() {
         var userId = $(this).data('id');
         var value = $(this).prop('checked') ? 'yes' : 'no';
         const type = 'food_given';
