@@ -128,18 +128,26 @@
       });
 
       $('#tShirtGiven').click(function() {
-        const Value = $(this).prop('checked');
+        const Value = 'no';
+        if($(this).prop('checked')) {
+          Value = 'yes';
+        }
         const Type = 't_shirt_given';
         dataSave(Type, Value, this)
       });
 
       $('#foodGiven').click(function() {
-        const Value = $(this).prop('checked');
+        const Value = 'no';
+        if($(this).prop('checked')) {
+          Value = 'yes';
+        }
         const Type = 'food_given';
         dataSave(Type, Value, this);
       });
 
       function dataSave(Type, Value, element){
+        console.log(Type+Value);
+        return;
         $.ajax({
           url: "{{route('user.update.given')}}",
           type: 'POST',
