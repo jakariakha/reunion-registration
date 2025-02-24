@@ -162,7 +162,7 @@
             </div>
 
             <div id="ssc-batch-less-25" class="mb-4 hidden">
-                <label for="participation" class="block text-white mb-2">অংশগ্রহণের ধরন</label>
+                <label for="participation" class="block text-black mb-2">অংশগ্রহণের ধরন</label>
                 <div class="">
                     <div class="flex items-center text-black">
                         <input class="form-radio" type="radio" name="participation_type" id="single2" value="single">
