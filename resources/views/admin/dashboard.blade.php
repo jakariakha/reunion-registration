@@ -116,7 +116,6 @@
             'search_value' : searchValue
           },
           success: function(response) {
-            // console.log(response.status);
             if(response.status === 'found') {
               $('#tableBody').html(response.data);
             } else if(response.status === 'notFound') {
@@ -141,27 +140,7 @@
         dataSave(userId, type, value, this);
       });
 
-      $('#tShirtGiven').click(function() {
-        let Value = 'no';
-        if($(this).prop('checked')) {
-          Value = 'yes';
-        }
-        const Type = 't_shirt_given';
-        dataSave(Type, Value, this)
-      });
-
-      $('#foodGiven').click(function() {
-        let Value = 'no';
-        if($(this).prop('checked')) {
-          Value = 'yes';
-        }
-        const Type = 'food_given';
-        dataSave(Type, Value, this);
-      });
-
       function dataSave(userId, type, value, element){
-        // console.log(userId+type+value);
-        // return;
         $.ajax({
           url: "{{route('user.update.given')}}",
           type: 'POST',
@@ -171,7 +150,6 @@
             'value' : value
           },
           success: function(response) {
-            console.log(response);
             if(response.value === 'yes') {
               $(this).checked;
             } else if(response.value === 'no') {
