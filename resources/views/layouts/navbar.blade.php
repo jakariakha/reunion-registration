@@ -27,7 +27,7 @@
         <a href="{{ route('admin.received.opinion') }}" class="block text-gray-900 hover:text-gray-500 transition-all duration-200 px-6 py-3">প্রাপ্ত মতামত</a>
         <a href="{{ route('admin.logout') }}" class="block text-gray-900 hover:text-gray-500 transition-all duration-200 px-6 py-3">লগআউট</a>
         <!-- Premium Button -->
-        <a href="{{ route('registration') }}" class="block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg px-12 py-4 rounded-full shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
+        <a href="{{ route('registration') }}" class="inline-block bg-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:bg-green-600 transition-all transform hover:scale-105">
           নিবন্ধন করুন
         </a>
       @endauth
@@ -67,6 +67,12 @@
       <a href="{{ route('admin.dashboard') }}" class="block text-gray-900 hover:text-gray-500 transition-all duration-200 px-6 py-3">ড্যাশবোর্ড</a>
       <a href="{{ route('admin.dashboard') }}" class="block text-gray-900 hover:text-gray-500 transition-all duration-200 px-6 py-3">প্রাপ্ত মতামত</a>
       <a href="{{ route('admin.logout') }}" class="block text-gray-900 hover:text-gray-500 transition-all duration-200 px-6 py-3">লগআউট</a>
+      <!-- Premium Button -->
+      <div class="flex justify-center items-center">
+      <a href="{{ route('registration') }}" class="block text-center bg-green-500 text-white text-lg px-4 py-4 w-64 rounded-full shadow-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
+        নিবন্ধন করুন
+      </a>
+      </div>
     @endauth
 
     @if(Auth::guard('web')->check() == false && Auth::guard('admin')->check() == false)
