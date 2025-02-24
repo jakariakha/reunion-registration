@@ -149,7 +149,6 @@
             'value' : Value ? 'yes' : 'no'
           },
           success: function(response) {
-            console.log(response);
             if(response.value === 'yes') {
               $(this).checked;
             } else if(response.value === 'no') {
