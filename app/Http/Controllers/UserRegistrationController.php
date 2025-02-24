@@ -212,7 +212,7 @@ class UserRegistrationController extends Controller
     public function sendPassword() {
         $api_url = config('app.sms_api_url');
         $password= session()->get('password');
-        $message = 'পুনর্মিলনী নিবন্ধন অ্যাকাউন্টের পাসওয়ার্ড: '.$password;
+        $message = 'অভিনন্দন! আপনার পূর্ণমিলনী নিবন্ধন সফল হয়েছে। আপনার পুনর্মিলনী নিবন্ধন অ্যাকাউন্টের পাসওয়ার্ড: '.$password;
         $response = Http::timeout(30)->post($api_url, [
             'api_key' => config('app.sms_api_key'),
             'msg' => $message,
