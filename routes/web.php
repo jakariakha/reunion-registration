@@ -29,11 +29,6 @@ Route::middleware(UserMiddleware::class)->group(function(){
     Route::post('/profile/update', [UserRegistrationController::class, 'userProfileUpdatePost'])->name('update.profile.post');
 });
 
-
-Route::get('/test', function () {
-    return view('test');
-})->name('test');
-
 Route::get('/opinion', function () {
     return view('opinion');
 })->name('opinion');
