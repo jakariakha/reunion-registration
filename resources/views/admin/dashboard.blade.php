@@ -160,8 +160,8 @@
       });
 
       function dataSave(userId, type, value, element){
-        console.log(userId+type+value);
-        return;
+        // console.log(userId+type+value);
+        // return;
         $.ajax({
           url: "{{route('user.update.given')}}",
           type: 'POST',
