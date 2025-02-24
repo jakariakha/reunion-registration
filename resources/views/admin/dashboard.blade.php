@@ -128,14 +128,14 @@
       });
 
       $('.updateTShirtGivenStatus').change(function() {
-        var userid = $(this).data('id');
+        var userId = $(this).data('id');
         var value = $(this).prop('checked') ? 'yes' : 'no';
         const type = 't_shirt_given';
         dataSave(userId, type, value, this);
       });
 
       $('.updateFoodGivenStatus').change(function() {
-        var userid = $(this).data('id');
+        var userId = $(this).data('id');
         var value = $(this).prop('checked') ? 'yes' : 'no';
         const type = 'food_given';
         dataSave(userId, type, value, this);
