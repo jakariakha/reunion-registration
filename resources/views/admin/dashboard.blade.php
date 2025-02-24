@@ -166,7 +166,7 @@
           url: "{{route('user.update.given')}}",
           type: 'POST',
           data: {
-            'user_id' : ,
+            'user_id' : userId,
             'type' : type,
             'value' : value
           },
