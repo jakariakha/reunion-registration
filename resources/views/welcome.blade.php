@@ -23,7 +23,7 @@
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 py-8 space-y-3">
                         <p class="text-2xl md:text-4xl font-extrabold tracking-wide drop-shadow-lg">ফেরার হোক স্মৃতির টানে</p>
                         <p class="text-lg md:text-2xl font-semibold tracking-tight drop-shadow-md">
-                            আহাম্মদ আলী মেমোরিয়াল উচ্চ বিদ্যালয় পূর্ণমিলনী ২০২৫
+                            আহাম্মদ আলী মেমোরিয়াল উচ্চ বিদ্যালয় পুনর্মিলনী ২০২৫
                         </p>
                         <p class="text-base md:text-lg font-medium bg-white/20 px-4 py-1 rounded-xl backdrop-blur-sm">
                             অনুষ্ঠানের তারিখ: ঈদুল আজহার তৃতীয় দিন
