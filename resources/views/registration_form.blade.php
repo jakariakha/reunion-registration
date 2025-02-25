@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Reunion Registration 2025')
+@section('title', 'AAMHS Reunion Registration 2025')
 
 @section('content')
 
