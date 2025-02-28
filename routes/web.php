@@ -5,7 +5,6 @@ use App\Http\Middleware\IsOtpVerified;
 use App\Http\Middleware\UserMiddleware;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AdminController;
-use App\Http\Middleware\CheckRequestMethod;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\BkashPaymentController;
 use App\Http\Controllers\UserRegistrationController;
