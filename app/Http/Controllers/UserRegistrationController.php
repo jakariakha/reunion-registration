@@ -17,9 +17,7 @@ use App\Http\Controllers\BkashPaymentController;
 class UserRegistrationController extends Controller
 {
     public function paymentAndParticipants(Request $request) {
-
         $turnstileResponse = $request->input('cf-turnstile-response');
-
         if(!$turnstileResponse) {
             return redirect()->route('registration')->with('error', 'ক্যাপচা যাচাইকরণ ব্যর্থ হয়েছে৷');
         }
