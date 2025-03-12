@@ -67,7 +67,6 @@ Route::get('/registration-confirmation', function() {
     return redirect()->route('home');
 })->name('registration.confirmation');
 
-
 Route::prefix('admin')->group(function (){
     Route::get('/', function (){
         return redirect()->route('admin.login.form');

@@ -39,17 +39,4 @@ class AdminController extends Controller
         return redirect('/admin/login'); 
 
     }
-
-    public function insertAdmin() {
-        $password = Str::random(16);
-        $insertAdmin = Admin::create([
-            'mobile_number' => '01726232144',
-            'password' => Hash::make($password),
-            'role' => 'admin'
-        ]);
-
-        if($insertAdmin) {
-            return $password;
-        }
-    }
 }
