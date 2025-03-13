@@ -78,7 +78,7 @@ class BkashPaymentController extends Controller
 
         if($response->successful()) {
             return $response;
-        }
+        } else return $response;
     }
 
     public function transactionStatus(Request $request) {
