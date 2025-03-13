@@ -44,7 +44,7 @@
       </div>
 
       <!-- Failure Message -->
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-800 text-center mb-4">❌ নিবন্ধন ব্যর্থ!</h2>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-800 text-center mb-4">❎ নিবন্ধন ব্যর্থ!</h2>
       <p class="text-gray-600 text-center text-base sm:text-lg leading-relaxed mb-6">
       😞 দুঃখিত, আপনার পূর্ণমিলনী নিবন্ধন ব্যর্থ হয়েছে। 
        অনুগ্রহ করে আবার চেষ্টা করুন।
