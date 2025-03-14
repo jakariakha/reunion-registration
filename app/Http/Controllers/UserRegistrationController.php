@@ -237,7 +237,7 @@ class UserRegistrationController extends Controller
     }
 
     public function userSearch(Request $request) {
-        $userSearch = UserRegistrationModel::where('registrant_ID', 'like', '%'.$request->search_value.'%')->paginate(20);
+        $userSearch = UserRegistrationModel::where('registrant_ID', 'like', '%'.$request->search_value.'%')->paginate(10);
         if($userSearch->isEmpty()) {
             return response()->json([
                 'status' => 'notFound',
