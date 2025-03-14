@@ -229,8 +229,9 @@ class UserRegistrationController extends Controller
     public function usersData() {
         $usersData = UserRegistrationModel::paginate(10);
         $totalAmount = UserRegistrationModel::sum('total_amount');
+        $totalRegistrant = UserRegistrationModel::count();
         if($usersData->isNotEmpty()) {
-            return view('admin.dashboard', compact('usersData', 'totalAmount'));
+            return view('admin.dashboard', compact('usersData', 'totalRegistrant', 'totalAmount'));
         } else {
             return view('admin.dashboard', ['usersData' => []]);
         }

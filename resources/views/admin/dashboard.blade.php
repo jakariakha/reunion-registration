@@ -13,7 +13,7 @@
     <div class="bg-white rounded-2xl shadow p-3 md:p-4 flex flex-col items-center text-center transition-transform hover:scale-[1.02]">
         <div class="flex justify-between items-center w-full mb-3">
             <div>
-            <span class="mt-2 text-blue-600 text-xl md:text-2xl font-bold">{{ $usersData->count() }}</span>
+            <span class="mt-2 text-blue-600 text-xl md:text-2xl font-bold">{{ $totalRegistrant }}</span>
               <h3 class="text-sm md:text-base font-semibold mb-1">Total Registrants</h3>
             </div>
             <div class="bg-blue-100 p-2 md:p-3 rounded-full">
