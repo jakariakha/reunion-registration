@@ -312,7 +312,7 @@ class UserRegistrationController extends Controller
         }
 
         if(isset(Auth::user()->ssc_batch)) {
-            if(Auth::user()->ssc_batch <= 2021) {
+            if(Auth::user()->ssc_batch <= 2020) {
                 if($request->participation_type === 'single') {
                     $totalAmount += 1000;
                 }
@@ -320,7 +320,7 @@ class UserRegistrationController extends Controller
                     $totalAmount += 1300;
                     $totalParticipant = 2;
                 }
-            } else if(2022 <= Auth::user()->ssc_batch && Auth::user()->ssc_batch <= 2024) {
+            } else if(2021 <= Auth::user()->ssc_batch && Auth::user()->ssc_batch <= 2024) {
                 if($request->participation_type === 'single') {
                     $totalAmount += 750;
                 }
