@@ -244,9 +244,9 @@
                 
                 <div class="mb-4 {{ isset($userData->registrant_name) ? '' : 'hidden' }}" id="registrantInfoSection">
                     <label for="registrant_name" class="block text-black mb-2 mt-2">নিবন্ধনকারীর নাম</label>
-                    <input type="text" class="w-full border-black border-2 px-4 py-3 rounded-lg bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400" id="registrantName" name="registrant_name" value="{{ isset($userData->registrant_name) ? $userData->registrant_name : '' }}">
+                    <input type="text" class="w-full border-black border-2 px-4 py-3 rounded-lg bg-white/20 text-black focus:outline-none focus:ring-2 focus:ring-blue-400" id="registrantName" name="registrant_name" value="{{ isset($userData->registrant_name) ? $userData->registrant_name : '' }}">
                     <label for="registrant_mobile_number" class="block text-black mb-2 mt-2">নিবন্ধনকারীর মোবাইল নম্বর</label>
-                    <input type="tel" class="w-full border-black border-2 px-4 py-3 rounded-lg bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400" id="registrantMobileNumber" name="registrant_mobile_number" value="{{ isset($userData->registrant_mobile_number) ? $userData->registrant_mobile_number : '' }}">
+                    <input type="tel" class="w-full border-black border-2 px-4 py-3 rounded-lg bg-white/20 text-black focus:outline-none focus:ring-2 focus:ring-blue-400" id="registrantMobileNumber" name="registrant_mobile_number" value="{{ isset($userData->registrant_mobile_number) ? $userData->registrant_mobile_number : '' }}">
                 </div>
             </div>
     </div>
