@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@if(session('status') && session('status') == 'success')
+@if($status === 'success')
 @section('title', 'নিবন্ধন সফল')
 @section('content')
 <div class="flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -29,7 +29,7 @@
   </div>
 </div>
 @endsection
-@elseif(session('status') && session('status') == 'failed')
+@elseif(isset($status) && $status === 'failed')
 @section('title', 'নিবন্ধন ব্যর্থ')
 @section('content')
 <div class="flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-50 py-12 px-4 sm:px-6 lg:px-8">

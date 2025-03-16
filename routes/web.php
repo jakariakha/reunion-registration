@@ -56,16 +56,11 @@ Route::get('/verify-otp', function () {
     return view('otp_verification');
 })->middleware(IsOtpVerified::class)->name('otp.verification');
 
-Route::post('/submitted-otp',[UserRegistrationController::class, 'otpVerify'])->name('submitted.otp.verification');
+Route::post('/submitted-otp', [UserRegistrationController::class, 'otpVerify'])->name('submitted.otp.verification');
 
 Route::get('/transaction-status', [BkashPaymentController::class, 'transactionStatus'])->name('transaction.status');
 
-Route::get('/registration-confirmation', function() {
-    if(session()->get('status') === 'success' || session()->get('status') === 'failed') {
-        return view('registration_confirmation');
-    }
-    return redirect()->route('home');
-})->name('registration.confirmation');
+Route::get('/registration-confirmation', [UserRegistrationController::class, 'registrationConfirmation'])->name('registration.confirmation');
 
 Route::prefix('admin')->group(function (){
     Route::get('/', function (){

@@ -92,7 +92,6 @@ class UserRegistrationController extends Controller
             'cashout_charge' => $cashoutCharge,
             'total_amount' => $totalAmount
         ]);
-
         return redirect()->route('payment.summary');
     }
 
@@ -222,7 +221,7 @@ class UserRegistrationController extends Controller
                 'status' => 'error',
                 'messgae' => 'কোন সমস্যা হয়েছে। আবার চেষ্টা করুন!'
             ]);
-            Session::flush();
+            session()->flush();
         }
     }
 
@@ -419,6 +418,14 @@ class UserRegistrationController extends Controller
         }
     }
 
+    public function registrationConfirmation() {
+        if(session()->has('status')) {
+            $status = session()->get('status');
+            return view('registration_confirmation', compact('status'));
+        }
+        return redirect()->route('home');
+    }
+
     public function cfTurnstile($request) {
 
         $turnstileResponse = $request->input('cf-turnstile-response');
@@ -426,7 +433,7 @@ class UserRegistrationController extends Controller
             return false;
         }
 
-        $response = Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+        $response = Http::timeout(60)->asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
             'secret' => config('services.turnstile.secret_key'),
             'response' => $request->input('cf-turnstile-response'),
             'remoteip' => $request->ip(),
