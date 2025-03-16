@@ -9,7 +9,11 @@ use App\Http\Controllers\UserRegistrationController;
 
 class BkashPaymentController extends Controller
 {
-    private $base_url = 'https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout';
+    private $base_url;
+
+    public function __construct() {
+        $this->base_url = config('app.bkash_base_url');
+    }
 
     // 🏦 Main payment function
     public function bkashPayment()

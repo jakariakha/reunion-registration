@@ -123,6 +123,7 @@ return [
     'sms_api_key' => env('SMS_API_KEY'),
     'sms_api_url' => env('SMS_API_URL'),
 
+    'bkash_base_url' => env('BKASH_BASE_URL'),
     'bkash_app_key' => env('BKASH_APP_KEY'),
     'bkash_secret_key' => env('BKASH_SECRET_KEY'),
     'bkash_username' => env('BKASH_USERNAME'),
