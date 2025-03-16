@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@if($status === 'success')
+@if(isset($status) && $status === 'success')
 @section('title', 'নিবন্ধন সফল')
 @section('content')
 <div class="flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-50 py-12 px-4 sm:px-6 lg:px-8">
