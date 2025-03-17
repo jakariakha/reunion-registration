@@ -126,8 +126,12 @@ class BkashPaymentController extends Controller
                     app(UserRegistrationController::class)->userProfileUpdate(session()->get('user_data'));
                 }
 
-                app(UserRegistrationController::class)->insertUserData();
-                return redirect()->route('registration.confirmation')->with('status', 'success');
+                if (session()->get('validate_data')) {
+                    app(UserRegistrationController::class)->insertUserData();
+                    return redirect()->route('registration.confirmation')->with('status', 'success');
+                } else {
+                    return redirect()->route('payment.summary')->with('error', 'কোন সমস্যা হয়েছে। আবার চেষ্টা করুন!');
+                }
             } else {
                 Log::error('bKash Transaction Incomplete', ['response' => $response]);
                 return redirect()->route('home')->with('error', 'Transaction incomplete');
