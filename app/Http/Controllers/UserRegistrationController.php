@@ -421,6 +421,9 @@ class UserRegistrationController extends Controller
     public function registrationConfirmation() {
         if(session()->has('status')) {
             $status = session()->get('status');
+            if($status === 'success') {
+                $this->insertUserData();
+            }
             return view('registration_confirmation', compact('status'));
         }
         return redirect()->route('home');

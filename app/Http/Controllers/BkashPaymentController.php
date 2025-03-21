@@ -126,8 +126,8 @@ class BkashPaymentController extends Controller
                     app(UserRegistrationController::class)->userProfileUpdate(session()->get('user_data'));
                 }
 
-                if (session()->get('validate_data')) {
-                    app(UserRegistrationController::class)->insertUserData();
+                if (session()->has('validate_data')) {
+                    // app(UserRegistrationController::class)->insertUserData();
                     return redirect()->route('registration.confirmation')->with('status', 'success');
                 } else {
                     return redirect()->route('payment.summary')->with('error', 'কোন সমস্যা হয়েছে। আবার চেষ্টা করুন!');
@@ -137,7 +137,7 @@ class BkashPaymentController extends Controller
                 return redirect()->route('home')->with('error', 'Transaction incomplete');
             }
         } else if ($status == 'failure' || $status == 'cancel') {
-            if (!empty(session()->get('profile_update'))) {
+            if (session()->has('profile_update')) {
                 session()->forget('profile_update');
                 return redirect()->route('profile')->with('error', 'প্রোফাইল আপডেট ব্যর্থ হয়েছে');
             }
