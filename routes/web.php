@@ -42,12 +42,13 @@ Route::post('/opinion', [UserRegistrationController::class, 'opinionSubmit'])->n
 Route::post('/calculate-payment-and-participants', [UserRegistrationController::class, 'paymentAndParticipants'])->name('payment.participants');
 
 Route::get('/payment-summary', function () {
-    if(empty(session()->get('validate_data')['mobile_number']) || empty(session()->get('total_amount'))) {
-        return redirect()->route('home');
-    } else if(session()->has('otp_verified')){
+    if(session()->has('otp_verified')){
         return redirect()->route('payment');
     }
-    return view('payment_summary');
+    if(session()->has('validate_data.mobile_number') && session()->has('total_amount')) {
+        return view('payment_summary');
+    }
+    return redirect()->route('home');
 })->name('payment.summary');
 
 Route::get('/payment', [BkashPaymentController::class, 'bkashPayment'])->name('payment');
