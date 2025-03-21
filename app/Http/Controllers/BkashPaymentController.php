@@ -122,7 +122,7 @@ class BkashPaymentController extends Controller
             $response = $this->executePayment($paymentID);
 
             if (isset($response['transactionStatus']) && $response['transactionStatus'] === 'Completed') {
-                if (!empty(session()->get('profile_update'))) {
+                if (session()->has('profile_update')) {
                     app(UserRegistrationController::class)->userProfileUpdate(session()->get('user_data'));
                 }
 

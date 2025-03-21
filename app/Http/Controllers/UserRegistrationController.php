@@ -221,8 +221,8 @@ class UserRegistrationController extends Controller
                 'status' => 'error',
                 'messgae' => 'কোন সমস্যা হয়েছে। আবার চেষ্টা করুন!'
             ]);
-            session()->flush();
         }
+        session()->flush();
     }
 
     public function usersData() {
