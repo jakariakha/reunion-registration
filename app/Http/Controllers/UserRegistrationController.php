@@ -207,8 +207,13 @@ class UserRegistrationController extends Controller
                 'status' => 'error',
                 'messgae' => 'কোন সমস্যা হয়েছে। আবার চেষ্টা করুন!'
             ]);
-        } 
-        return $this->sendPassword();
+        }
+
+        if(Auth::guard('admin')->check()) {
+            return $this->sendPassword();
+        }
+        
+        $this->sendPassword();
     }
 
     public function sendPassword() {
@@ -231,7 +236,7 @@ class UserRegistrationController extends Controller
         if(Auth::guard('admin')->check()) {
             return redirect()->route('registration')->with('success', 'নিবন্ধন সফল হয়েছে');
         }
-        
+
         session()->flush();
     }
 
