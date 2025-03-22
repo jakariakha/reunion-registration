@@ -92,10 +92,15 @@ class UserRegistrationController extends Controller
             'cashout_charge' => $cashoutCharge,
             'total_amount' => $totalAmount
         ]);
+
         return redirect()->route('payment.summary');
     }
 
     public function sendOtp() {
+        if(Auth::guard('admin')->check()) {
+            return $this->insertUserData();
+        }
+
         $mobileNumber = session()->get('validate_data')['mobile_number'];
         $limiterKey = 'otp:' . $mobileNumber ;
         if(RateLimiter::tooManyAttempts($limiterKey, 6)) {
@@ -202,8 +207,8 @@ class UserRegistrationController extends Controller
                 'status' => 'error',
                 'messgae' => 'কোন সমস্যা হয়েছে। আবার চেষ্টা করুন!'
             ]);
-        }
-        $this->sendPassword();
+        } 
+        return $this->sendPassword();
     }
 
     public function sendPassword() {
@@ -222,6 +227,11 @@ class UserRegistrationController extends Controller
                 'messgae' => 'কোন সমস্যা হয়েছে। আবার চেষ্টা করুন!'
             ]);
         }
+
+        if(Auth::guard('admin')->check()) {
+            return redirect()->route('registration')->with('success', 'নিবন্ধন সফল হয়েছে');
+        }
+        
         session()->flush();
     }
 

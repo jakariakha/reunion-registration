@@ -27,7 +27,7 @@
                     </button>
                 </div>
             @endif
-
+            
             @if(session('error'))
                 <div class="flex items-center bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 rounded-md shadow-md">
                     <!-- Message Content -->
@@ -41,7 +41,6 @@
                     </button>
                 </div>
             @endif
-
 
             <div class="mb-4">
                 <label for="name" class="block text-black mb-2">নাম</label>
